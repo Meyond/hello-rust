@@ -1,9 +1,31 @@
-fn main() {
-    let a = 12;
-    let b = "Jack";
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
 
-    fn five() -> i32 {
-        5
+impl Rectangle {
+    fn width(&self) -> bool {
+        self.width > 0
     }
-    println!("a is {},\n {1}", a, b);
+
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        rect1.area()
+    );
+
+    if rect1.width() {
+        println!("The rectangle has a nonzero width; it is {}", rect1.width);
+    }
 }

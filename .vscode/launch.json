@@ -1,45 +1,28 @@
 {
-  // 使用 IntelliSense 了解相关属性。
-  // 悬停以查看现有属性的描述。
-  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "lldb",
-      "request": "launch",
-      "name": "Debug executable 'hello-rust'",
-      "cargo": {
-        "args": [
-          "build",
-          "--bin=hello-rust",
-          "--package=hello-rust"
-        ],
-        "filter": {
-          "name": "hello-rust",
-          "kind": "bin"
-        }
-      },
-      "args": [],
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "type": "lldb",
-      "request": "launch",
-      "name": "Debug unit tests in executable 'hello-rust'",
-      "cargo": {
-        "args": [
-          "test",
-          "--no-run",
-          "--bin=hello-rust",
-          "--package=hello-rust"
-        ],
-        "filter": {
-          "name": "hello-rust",
-          "kind": "bin"
-        }
-      },
-      "args": [],
-      "cwd": "${workspaceFolder}"
-    }
-  ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug executable 'target/debug/hello-rust.exe'",
+			"program": "${workspaceFolder}/target/debug/hello-rust.exe",
+			"args": [],
+			"cwd": "${workspaceFolder}",
+			"sourceLanguages": ["rust"],
+			"preLaunchTask": "cargo build"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug test 'unit tests'",
+			"program": "${workspaceFolder}/target/debug/hello-rust.exe",
+			"args": [],
+			"cwd": "${workspaceFolder}",
+			"sourceLanguages": ["rust"],
+			"preLaunchTask": "cargo test",
+			"env": {
+				"RUST_TEST_THREADS": "1"
+			}
+		}
+	]
 }

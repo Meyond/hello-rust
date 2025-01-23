@@ -5,8 +5,8 @@ fn main() {
 
   // 使用 match 语句处理 Option 类型
   let sum = match y {
-      Some(value) => x + value,
-      None => x,
+    Some(value) => x + value,
+    None => x,
   };
 
   // 使用 map 处理 Option 类型

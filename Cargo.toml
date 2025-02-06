@@ -11,3 +11,6 @@ path = "src/lib.rs"
 [dependencies]
 # yew = "0.18"
 rand="0.8.5"
+
+[profile.release]
+panic = 'abort'

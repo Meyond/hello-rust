@@ -1,13 +1,15 @@
 /**
  * T type
+ * U 代表额外类型
+ * S 另一个类型，区别于T
+ *
  * K key
  * V value
+ *
  * E error / element
- * S 另一个类型，区别于T
- * U 代表额外类型
  */
 
- fn largest<T: PartialOrd>(list: &[T]) -> &T {
+fn largest<T: PartialOrd>(list: &[T]) -> &T {
   let mut largest = &list[0];
 
   for item in list {

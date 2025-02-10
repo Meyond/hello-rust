@@ -30,3 +30,19 @@ fn main() {
   let result = largest(&char_list);
   println!("The largest char is {result}");
 }
+
+// 泛型约束
+
+// Copy 浅拷贝
+// Clone 深拷贝
+
+// PartialEq 部分相等
+// Eq 完全相等
+
+// PartialOrd 部分排序
+// Ord 完全排序
+
+// Serialize 序列化
+// Deserialize 反序列化
+
+// Iterator 迭代器
